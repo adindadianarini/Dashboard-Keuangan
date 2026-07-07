@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Keuangan</title>
+  <link rel="stylesheet" href="../styles/laporan.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+</head>
+<body data-page="laporan">
+  <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar">
+  <div class="report-shell">
+    <div data-layout="sidebar"></div>
+    <main class="report-content">
+      <div data-layout="topbar"></div>
+      <section class="filter-card" aria-label="Filter laporan">
+        <div class="filter-field"><label>PERIODE</label><button>Semester <span>⌄</span></button></div>
+        <div class="filter-field"><label>TAHUN AJARAN</label><button>Ganjil 2025/2026 <span>⌄</span></button></div>
+        <div class="filter-field"><label>UNIT SEKOLAH</label><button>Semua Unit <span>⌄</span></button></div>
+        <div class="filter-field"><label>JENIS LAPORAN</label><button>Rekap Keuangan <span>⌄</span></button></div>
+        <button class="show-report"><span class="search-symbol"></span><span>Tampilkan<br>Laporan</span></button>
+      </section>
+
+      <section class="report-grid">
+        <div class="report-main">
+          <section class="summary-grid" aria-label="Ringkasan laporan">
+            <article class="summary-card"><span>PERIODE AKTIF</span><strong>Semester<br>Ganjil 2025/2026</strong></article>
+            <article class="summary-card"><span>TOTAL PEMASUKAN</span><strong class="income">Rp 2.500.000.000</strong></article>
+            <article class="summary-card"><span>TOTAL PENGELUARAN</span><strong class="expense">Rp 1.250.000.000</strong></article>
+            <article class="summary-card"><span>SALDO AKHIR</span><strong class="balance">Rp 1.250.000.000</strong></article>
+          </section>
+
+          <section class="report-preview" aria-label="Pratinjau laporan">
+            <div class="report-actions">
+              <button><span class="action-icon action-icon--pdf"></span>Export PDF</button>
+              <button><span class="action-icon action-icon--excel"></span>Export Excel</button>
+              <button><span class="action-icon action-icon--print"></span>Print</button>
+            </div>
+
+            <div class="document">
+              <div class="document__heading">
+                <h2>AL-MIDADI</h2>
+                <p>SISTEM KEUANGAN PENDIDIKAN ISLAM TERINTEGRASI</p>
+                <h3>Laporan Keuangan Semester Ganjil 2025/2026</h3>
+                <span>Dicetak pada: 20 Januari 2026, 14:30 WIB</span>
+              </div>
+
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Kategori</th>
+                    <th>Anggaran (Rp)</th>
+                    <th>Realisasi (Rp)</th>
+                    <th>Selisih (Rp)</th>
+                    <th>Persentase</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Operasional Sekolah</td>
+                    <td>500.000.000</td>
+                    <td>475.000.000</td>
+                    <td>+25.000.000</td>
+                    <td><span>95%</span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Gaji Guru & Staff</td>
+                    <td>600.000.000</td>
+                    <td>588.000.000</td>
+                    <td>+12.000.000</td>
+                    <td><span>98%</span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Kegiatan Siswa</td>
+                    <td>150.000.000</td>
+                    <td>135.000.000</td>
+                    <td>+15.000.000</td>
+                    <td><span>90%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="table-more" href="#">Selengkapnya &gt;</a>
+            </div>
+          </section>
+        </div>
+
+        <aside class="report-side">
+          <section class="insight-card">
+            <h2><span class="side-title-icon side-title-icon--bulb"></span>Insight Eksekutif</h2>
+            <article class="insight-item insight-item--check">
+              <strong>Realisasi Anggaran Sehat</strong>
+              <p>Penyerapan anggaran saat ini berada di angka 78%, sesuai dengan target kuartal ini.</p>
+            </article>
+            <article class="insight-item insight-item--trend">
+              <strong>Pertumbuhan Pemasukan</strong>
+              <p>Terdapat peningkatan pemasukan sebesar 12% dibandingkan periode yang sama tahun lalu.</p>
+            </article>
+          </section>
+
+          <section class="history-card">
+            <h2>Laporan Terakhir Diakses</h2>
+            <div class="history-item"><span class="history-icon history-icon--green"></span><p><strong>Laporan Pemasukan Ganjil</strong><br>20 Jan 2026 • Oleh Floyd Miles</p></div>
+            <div class="history-item"><span class="history-icon history-icon--yellow"></span><p><strong>Rekap Transaksi Harian</strong><br>19 Jan 2026 • Oleh Admin SD</p></div>
+            <div class="history-item"><span class="history-icon history-icon--red"></span><p><strong>Realisasi Anggaran Q4</strong><br>15 Jan 2026 • Oleh Floyd Miles</p></div>
+            <button>Lihat Semua Riwayat</button>
+          </section>
+        </aside>
+      </section>
+    
+    </main>
+  </div>
+  <script src="../scripts/include-layout.js"></script>
+</body>
+</html>
+

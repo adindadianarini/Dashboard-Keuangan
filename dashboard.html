@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Keuangan</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+</head>
+<body data-page="dashboard">
+  <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar">
+<div class="dashboard">
+    <div data-layout="sidebar"></div>
+    <main class="dashboard__content">
+      <div data-layout="topbar"></div>
+<section class="summary-grid" aria-label="Ringkasan keuangan">
+        <article class="summary-card">
+          <div class="summary-card__icon summary-card__icon--balance" aria-hidden="true"></div>
+          <div>
+            <p class="summary-card__title">Total Saldo</p>
+            <strong class="summary-card__value">Rp 1.250.000.000</strong>
+            <span class="summary-card__meta">Total saldo tersedia</span>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card__icon summary-card__icon--income" aria-hidden="true"></div>
+          <div>
+            <p class="summary-card__title">Total Pemasukan</p>
+            <strong class="summary-card__value">Rp 2.500.000.000</strong>
+            <span class="summary-card__meta summary-card__meta--positive">+12% dari periode lalu</span>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card__icon summary-card__icon--expense" aria-hidden="true"></div>
+          <div>
+            <p class="summary-card__title">Total Pengeluaran</p>
+            <strong class="summary-card__value">Rp 1.250.000.000</strong>
+            <span class="summary-card__meta summary-card__meta--negative">-5% dari periode lalu</span>
+          </div>
+        </article>
+
+        <article class="summary-card summary-card--progress">
+          <div class="progress-ring" aria-label="Realisasi anggaran 78 persen">
+            <span>78%</span>
+          </div>
+          <div>
+            <p class="summary-card__title">Realisasi Anggaran</p>
+            <strong class="summary-card__value">78%</strong>
+            <span class="summary-card__meta">dari total anggaran</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="analytics-grid" aria-label="Analitik keuangan">
+        <article class="panel financial-chart">
+          <div class="panel__header">
+            <div>
+              <h2>Tren Keuangan Bulanan</h2>
+              <div class="chart-legend">
+                <span><i class="legend-dot legend-dot--income"></i>Pemasukan</span>
+                <span><i class="legend-dot legend-dot--expense"></i>Pengeluaran</span>
+              </div>
+            </div>
+            <button class="more-button" type="button" aria-label="Opsi chart">...</button>
+          </div>
+
+          <div class="line-chart" aria-hidden="true">
+            <div class="chart-scale">
+              <span>500 jt</span>
+              <span>400 jt</span>
+              <span>300 jt</span>
+              <span>200 jt</span>
+              <span>100 jt</span>
+              <span>0</span>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 760 320" preserveAspectRatio="none" role="img" aria-label="Grafik tren keuangan bulanan">
+              <defs>
+                <linearGradient id="incomeArea" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#0c4b35" stop-opacity="0.08"/>
+                  <stop offset="100%" stop-color="#0c4b35" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="expenseArea" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#f59a0b" stop-opacity="0.08"/>
+                  <stop offset="100%" stop-color="#f59a0b" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <g class="chart-gridlines">
+                <line x1="0" y1="32" x2="760" y2="32"/>
+                <line x1="0" y1="96" x2="760" y2="96"/>
+                <line x1="0" y1="160" x2="760" y2="160"/>
+                <line x1="0" y1="224" x2="760" y2="224"/>
+                <line x1="0" y1="288" x2="760" y2="288"/>
+              </g>
+              <path class="chart-area chart-area--income" d="M0,210 C70,145 120,112 170,96 C220,80 250,156 300,156 C350,156 350,78 420,72 C490,66 470,166 530,178 C610,194 690,160 760,92 L760,320 L0,320 Z"/>
+              <path class="chart-area chart-area--expense" d="M0,260 C55,208 95,206 135,206 C190,206 188,218 245,196 C300,174 320,162 380,168 C440,174 435,192 505,192 C590,192 680,178 760,150 L760,320 L0,320 Z"/>
+              <path class="chart-line chart-line--income" d="M0,210 C70,145 120,112 170,96 C220,80 250,156 300,156 C350,156 350,78 420,72 C490,66 470,166 530,178 C610,194 690,160 760,92"/>
+              <path class="chart-line chart-line--expense" d="M0,260 C55,208 95,206 135,206 C190,206 188,218 245,196 C300,174 320,162 380,168 C440,174 435,192 505,192 C590,192 680,178 760,150"/>
+            </svg>
+            <div class="chart-months">
+              <span>Jan</span>
+              <span>Feb</span>
+              <span>Mar</span>
+              <span>Apr</span>
+              <span>Mei</span>
+              <span>Jun</span>
+              <span>Jul</span>
+              <span>Agu</span>
+              <span>Sep</span>
+              <span>Okt</span>
+              <span>Nov</span>
+              <span>Des</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel budget-composition">
+          <div class="panel__header">
+            <h2>Komposisi Anggaran</h2>
+            <button class="more-button" type="button" aria-label="Opsi komposisi anggaran">...</button>
+          </div>
+
+          <div class="budget-ring" aria-label="Total anggaran Rp 3.200.000.000">
+            <div class="budget-ring__center">
+              <strong>Rp 3.200.000.000</strong>
+              <span>Total Anggaran</span>
+            </div>
+          </div>
+
+          <div class="budget-list">
+            <div class="budget-list__item">
+              <span><i class="budget-dot budget-dot--green"></i>Operasional Sekolah</span>
+              <strong>35% <small>Rp 1.120.000.000</small></strong>
+            </div>
+            <div class="budget-list__item">
+              <span><i class="budget-dot budget-dot--orange"></i>Gaji Guru</span>
+              <strong>30% <small>Rp 960.000.000</small></strong>
+            </div>
+            <div class="budget-list__item">
+              <span><i class="budget-dot budget-dot--teal"></i>Sarana Prasarana</span>
+              <strong>20% <small>Rp 640.000.000</small></strong>
+            </div>
+            <div class="budget-list__item">
+              <span><i class="budget-dot budget-dot--blue"></i>Kegiatan Siswa</span>
+              <strong>10% <small>Rp 320.000.000</small></strong>
+            </div>
+            <div class="budget-list__item">
+              <span><i class="budget-dot budget-dot--violet"></i>Dakwah & Pembinaan</span>
+              <strong>5% <small>Rp 160.000.000</small></strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="tables-grid" aria-label="Aktivitas keuangan">
+        <article class="panel data-panel">
+          <div class="panel__header">
+            <h2>Transaksi Terbaru</h2>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table transaction-table">
+              <thead>
+                <tr>
+                  <th>Tanggal</th>
+                  <th>Transaksi</th>
+                  <th>Kategori</th>
+                  <th>Nominal</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20 Nov 2024</td>
+                  <td>SPP Bulan November</td>
+                  <td>Pendapatan</td>
+                  <td>Rp 125.000.000</td>
+                  <td><span class="status-badge status-badge--success">Selesai</span></td>
+                </tr>
+                <tr>
+                  <td>19 Nov 2024</td>
+                  <td>Pembayaran Gaji Guru</td>
+                  <td>Pengeluaran</td>
+                  <td>Rp 85.000.000</td>
+                  <td><span class="status-badge status-badge--success">Selesai</span></td>
+                </tr>
+                <tr>
+                  <td>18 Nov 2024</td>
+                  <td>Donasi Pembangunan</td>
+                  <td>Pendapatan</td>
+                  <td>Rp 45.000.000</td>
+                  <td><span class="status-badge status-badge--success">Selesai</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel data-panel">
+          <div class="panel__header">
+            <h2>Persetujuan Menunggu</h2>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table approval-table">
+              <thead>
+                <tr>
+                  <th>Item Pengajuan</th>
+                  <th>Nominal</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="table-item">
+                      <span class="table-icon"></span>
+                      <strong>Pengadaan Proyektor</strong>
+                    </div>
+                  </td>
+                  <td>Rp 8.000.000</td>
+                  <td>
+                    <div class="table-actions">
+                      <button type="button">Review</button>
+                      <button type="button" class="button-approve">Approve</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-item">
+                      <span class="table-icon table-icon--tools"></span>
+                      <strong>Perbaikan Komputer Lab</strong>
+                    </div>
+                  </td>
+                  <td>Rp 5.000.000</td>
+                  <td>
+                    <div class="table-actions">
+                      <button type="button">Review</button>
+                      <button type="button" class="button-approve">Approve</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-item">
+                      <span class="table-icon table-icon--book"></span>
+                      <strong>Pembelian Buku Ajar</strong>
+                    </div>
+                  </td>
+                  <td>Rp 3.200.000</td>
+                  <td>
+                    <div class="table-actions">
+                      <button type="button">Review</button>
+                      <button type="button" class="button-approve">Approve</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    
+    </main>
+  </div>
+  <script src="../scripts/include-layout.js"></script>
+</body>
+</html>
+

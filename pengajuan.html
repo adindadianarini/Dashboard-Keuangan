@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persetujuan</title>
+    <link rel="stylesheet" href="../styles/feature-pages.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+  </head>
+  <body data-page="pengajuan">
+    <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+    <div class="app-shell">
+      <div data-layout="sidebar"></div>
+      <main class="page-content approval-page">
+        <div data-layout="topbar"></div>
+
+        <section class="approval-stats" aria-label="Ringkasan persetujuan">
+          <article class="approval-stat">
+            <span class="approval-stat__icon approval-stat__icon--wait"></span>
+            <div>
+              <p>MENUNGGU<br />PERSETUJUAN</p>
+              <strong>12</strong>
+            </div>
+          </article>
+          <article class="approval-stat">
+            <span class="approval-stat__icon approval-stat__icon--done"></span>
+            <div>
+              <p>DISETUJUI HARI INI</p>
+              <strong>8</strong>
+            </div>
+          </article>
+          <article class="approval-stat">
+            <span class="approval-stat__icon approval-stat__icon--reject"></span>
+            <div>
+              <p>DITOLAK</p>
+              <strong>2</strong>
+            </div>
+          </article>
+          <article class="approval-stat">
+            <span class="approval-stat__icon approval-stat__icon--money"></span>
+            <div>
+              <p>TOTAL NILAI<br />PENGAJUAN</p>
+              <strong class="approval-stat__amount">Rp 56.000.000</strong>
+            </div>
+          </article>
+        </section>
+
+        <section class="approval-filter" aria-label="Filter persetujuan">
+          <button>Status: Menunggu<span></span></button>
+          <button>Semua Unit<span></span></button>
+          <button>mm/dd/yyyy</button>
+          <button>Semua Kategori<span></span></button>
+          <div></div>
+          <button class="approval-filter__apply"><span></span>Terapkan Filter</button>
+        </section>
+
+        <section class="approval-workspace">
+          <aside class="approval-list" aria-label="Daftar pengajuan">
+            <h2>Daftar Pengajuan</h2>
+            <article class="approval-request approval-request--active">
+              <div><span class="approval-priority approval-priority--high">HIGH</span><span class="approval-chip approval-chip--wait">MENUNGGU</span></div>
+              <h3>Pengadaan Proyektor</h3>
+              <p>SMA Islam</p>
+              <strong>Rp 8.000.000</strong>
+            </article>
+            <article class="approval-request">
+              <div><span class="approval-priority approval-priority--medium">MEDIUM</span><span class="approval-chip approval-chip--wait">MENUNGGU</span></div>
+              <h3>Perbaikan Musholla</h3>
+              <p>SMP Islam</p>
+              <strong>Rp 5.000.000</strong>
+            </article>
+            <article class="approval-request">
+              <div><span class="approval-priority approval-priority--high">HIGH</span><span class="approval-chip approval-chip--wait">MENUNGGU</span></div>
+              <h3>Pembelian Komputer Lab</h3>
+              <p>SMK Islam</p>
+              <strong>Rp 12.500.000</strong>
+            </article>
+            <article class="approval-request">
+              <div><span class="approval-priority approval-priority--low">LOW</span><span class="approval-chip approval-chip--wait">MENUNGGU</span></div>
+              <h3>Kegiatan Pesantren Kilat</h3>
+              <p>Semua Unit</p>
+              <strong>Rp 3.500.000</strong>
+            </article>
+            <article class="approval-request">
+              <div><span class="approval-priority approval-priority--medium">MEDIUM</span><span class="approval-chip approval-chip--wait">MENUNGGU</span></div>
+              <h3>Renovasi Ruang Kelas</h3>
+              <p>SD Islam</p>
+              <strong>Rp 18.500.000</strong>
+            </article>
+
+            <nav class="approval-pagination" aria-label="Navigasi halaman">
+              <button class="approval-pagination__btn approval-pagination__btn--prev" aria-label="Halaman sebelumnya">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <button class="approval-pagination__page approval-pagination__page--active">1</button>
+              <button class="approval-pagination__page">2</button>
+              <button class="approval-pagination__page">3</button>
+              <span class="approval-pagination__dots">...</span>
+              <button class="approval-pagination__page">25</button>
+
+              <button class="approval-pagination__btn approval-pagination__btn--next" aria-label="Halaman berikutnya">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </nav>
+          </aside>
+
+          <article class="approval-detail">
+            <div class="approval-detail__header">
+              <div>
+                <h2 class="approval-detail__title">Pengadaan Proyektor</h2>
+                <div class="approval-detail__meta">
+                  <span># REG-2024-042</span>
+                  <span>📅 15 Jan 2026</span>
+                </div>
+              </div>
+              <div class="approval-detail__amount">Rp 8.000.000</div>
+            </div>
+
+            <div class="approval-detail__grid">
+              <div class="approval-detail__info-item">
+                <label>UNIT SEKOLAH</label>
+                <p>SMA Islam</p>
+              </div>
+              <div class="approval-detail__info-item">
+                <label>KATEGORI</label>
+                <p>Sarana</p>
+              </div>
+              <div class="approval-detail__info-item">
+                <label>PRIORITAS</label>
+                <p class="priority-high">High</p>
+              </div>
+              <div class="approval-detail__info-item">
+                <label>STATUS</label>
+                <p class="status-pending">Menunggu</p>
+              </div>
+            </div>
+
+            <section class="approval-detail__section">
+              <h3>Deskripsi Pengajuan</h3>
+              <p>
+                Pengadaan 4 unit proyektor untuk ruang kelas unggulan guru menginformasikan efektivitas kegiatan belajar mengajar (KBM). Proyektor lama sudah tidak menampilkan hasil yang optimal. Penggantian berkontribusi pada peningkatan
+                hasil tes dan sering mati mendadak.
+              </p>
+            </section>
+
+            <section class="approval-detail__section">
+              <h3>Lampiran Dokumen</h3>
+              <div class="approval-detail__document">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="#d92323" opacity="0.2" />
+                  <path d="M14 2V8H20" stroke="#d92323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <p>Proposal_Pengadaan_Proyektor.pdf</p>
+                </div>
+                <button class="approval-detail__download" aria-label="Download file">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2V14M12 14L7 9M12 14L17 9M2 20H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </section>
+
+            <section class="approval-detail__section">
+              <h3>Riwayat Persetujuan</h3>
+              <div class="approval-timeline">
+                <div class="approval-timeline__item approval-timeline__item--done">
+                  <div class="approval-timeline__dot"></div>
+                  <div class="approval-timeline__content">
+                    <p class="approval-timeline__title">Pengajuan Dibuat</p>
+                    <p class="approval-timeline__date">15 Jan 2026, 09:00 AM oleh Staff TU</p>
+                  </div>
+                </div>
+                <div class="approval-timeline__item approval-timeline__item--done">
+                  <div class="approval-timeline__dot"></div>
+                  <div class="approval-timeline__content">
+                    <p class="approval-timeline__title">Diverifikasi Bendahara</p>
+                    <p class="approval-timeline__date">16 Jan 2026, 14:30 PM oleh Ibu Siti</p>
+                  </div>
+                </div>
+                <div class="approval-timeline__item approval-timeline__item--pending">
+                  <div class="approval-timeline__dot"></div>
+                  <div class="approval-timeline__content">
+                    <p class="approval-timeline__title">Menunggu Persetujuan Ketua Yayasan</p>
+                    <p class="approval-timeline__date">Saat ini</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="approval-detail__actions">
+              <button class="approval-action-btn approval-action-btn--secondary">Minta Revisi</button>
+              <button class="approval-action-btn approval-action-btn--danger">Tolak</button>
+              <button class="approval-action-btn approval-action-btn--primary">✓ Setujui Pengajuan</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="../scripts/include-layout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Data</title>
+  <link rel="stylesheet" href="../styles/feature-pages.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+</head>
+<body data-page="master-data">
+  <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar">
+  <div class="app-shell">
+    <div data-layout="sidebar"></div>
+    <main class="page-content master-page">
+      <div data-layout="topbar"></div>
+
+      <section class="master-stats" aria-label="Ringkasan pengguna">
+        <article class="master-stat"><span class="master-stat__icon master-stat__icon--users"></span><div><p>Total Pengguna</p><strong>125</strong></div></article>
+        <article class="master-stat"><span class="master-stat__icon master-stat__icon--active"></span><div><p>Pengguna Aktif</p><strong>118</strong></div></article>
+        <article class="master-stat"><span class="master-stat__icon master-stat__icon--admin"></span><div><p>Administrator</p><strong>12</strong></div></article>
+        <article class="master-stat"><span class="master-stat__icon master-stat__icon--unit"></span><div><p>Unit Sekolah</p><strong>8</strong></div></article>
+      </section>
+
+      <section class="master-layout">
+        <article class="master-panel master-users">
+          <div class="master-toolbar">
+            <label class="master-search"><span></span><input type="text" placeholder="Cari pengguna..."></label>
+            <button class="master-select">Semua Role <span></span></button>
+            <div class="master-toolbar__spacer"></div>
+            <button class="master-button master-button--outline"><span class="master-button__icon master-button__icon--import"></span>Import</button>
+            <button class="master-button master-button--primary">+ Tambah</button>
+          </div>
+
+          <table class="master-table">
+            <thead><tr><th>Nama &amp; Email</th><th>Role</th><th>Unit</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody>
+              <tr><td><div class="master-user"><span class="master-avatar master-avatar--dark">AF</span><div><strong>Ahmad Fauzi</strong><small>ahmad@almidadi.id</small></div></div></td><td><span class="master-role master-role--yellow">Ketua Yayasan</span></td><td>Yayasan</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">NH</span><div><strong>Nur Hidayah</strong><small>nur@almidadi.id</small></div></div></td><td><span class="master-role master-role--green">Bendahara</span></td><td>SMA Islam</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">MR</span><div><strong>Muhammad Rizki</strong><small>rizki@almidadi.id</small></div></div></td><td><span class="master-role master-role--gray">Operator</span></td><td>SMP Islam</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">AP</span><div><strong>Aisyah Putri</strong><small>aisyah@almidadi.id</small></div></div></td><td><span class="master-role master-role--gray">Auditor</span></td><td>Yayasan</td><td><span class="master-status master-status--off">Nonaktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar master-avatar--dark">AF</span><div><strong>Ahmad Fauzi</strong><small>ahmad@almidadi.id</small></div></div></td><td><span class="master-role master-role--yellow">Ketua Yayasan</span></td><td>Yayasan</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">NH</span><div><strong>Nur Hidayah</strong><small>nur@almidadi.id</small></div></div></td><td><span class="master-role master-role--green">Bendahara</span></td><td>SMA Islam</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">MR</span><div><strong>Muhammad Rizki</strong><small>rizki@almidadi.id</small></div></div></td><td><span class="master-role master-role--gray">Operator</span></td><td>SMP Islam</td><td><span class="master-status master-status--active">Aktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+              <tr><td><div class="master-user"><span class="master-avatar">AP</span><div><strong>Aisyah Putri</strong><small>aisyah@almidadi.id</small></div></div></td><td><span class="master-role master-role--gray">Auditor</span></td><td>Yayasan</td><td><span class="master-status master-status--off">Nonaktif</span></td><td><button class="master-kebab" aria-label="Aksi"></button></td></tr>
+            </tbody>
+          </table>
+
+          <footer class="master-table-footer"><span>Menampilkan 1-4 dari 125 pengguna</span><nav class="master-pagination" aria-label="Navigasi halaman"><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>&rsaquo;</button></nav></footer>
+        </article>
+
+        <aside class="master-side">
+          <article class="master-panel master-access">
+            <h2><span class="master-side-icon master-side-icon--shield"></span>Hak Akses Sistem</h2>
+            <div class="master-role-card master-role-card--yellow"><strong>Ketua Yayasan</strong><p>Melihat seluruh laporan<br>Menyetujui pengajuan</p></div>
+            <div class="master-role-card master-role-card--green"><strong>Bendahara</strong><p>Input transaksi harian<br>Rekonsiliasi kas</p></div>
+            <button class="master-role-button">Kelola Role</button>
+          </article>
+          <article class="master-panel master-activity">
+            <h2><span class="master-side-icon master-side-icon--clock"></span>Aktivitas Terbaru</h2>
+            <div class="master-timeline">
+              <article><p>Nur Hidayah menambahkan transaksi kas masuk</p><span>10 Menit yang lalu</span></article>
+              <article><p>Ahmad Fauzi menyetujui pengajuan dana SMA</p><span>1 Jam yang lalu</span></article>
+              <article><p>Sistem melakukan backup data harian</p><span>Kemarin, 23:00</span></article>
+              <article><p>Operator memperbarui data unit sekolah</p><span>2 hari yang lalu</span></article>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+  </div>
+  <script src="../scripts/include-layout.js"></script>
+</body>
+</html>

@@ -3,26 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pemasukan</title>
+  <title>Pengeluaran</title>
   <link rel="stylesheet" href="../styles/keuangan.css">
   <link rel="stylesheet" href="../styles/layout.css">
 </head>
-<body data-page="keuangan">
+<body data-page="transaksi">
   <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar">
-<div class="finance-shell">
+  <div class="finance-shell">
     <div data-layout="sidebar"></div>
     <main class="finance-content">
       <div data-layout="topbar"></div>
-<section class="page-intro">
-        <p>Monitoring seluruh sumber pemasukan sekolah secara transparan dan real-time.</p>
+
+      <section class="page-intro">
+        <p>Monitoring seluruh pengeluaran sekolah secara transparan dan real-time.</p>
       </section>
 
-      <section class="filter-panel" aria-label="Filter pemasukan">
+      <section class="filter-panel" aria-label="Filter pengeluaran">
         <div class="filter-panel__group">
           <button type="button">Semua Bulan <span>⌄</span></button>
           <button type="button">Tahun 2024 <span>⌄</span></button>
           <button type="button">Semua Unit Sekolah <span>⌄</span></button>
-          <button type="button">Semua Sumber Dana <span>⌄</span></button>
+          <button type="button">Semua Kategori <span>⌄</span></button>
         </div>
         <button class="export-button" type="button">
           <span class="export-icon" aria-hidden="true"></span>
@@ -30,23 +31,23 @@
         </button>
       </section>
 
-      <section class="insight-banner" aria-label="Insight pemasukan">
+      <section class="insight-banner" aria-label="Insight pengeluaran">
         <span class="insight-icon" aria-hidden="true"></span>
         <div>
-          <h2>Insight Pemasukan</h2>
-          <p>Pendapatan naik 12% dibandingkan periode yang sama tahun lalu. SPP tetap menjadi sumber pemasukan terbesar, namun kontribusi donasi alumni menunjukkan tren peningkatan yang signifikan bulan ini.</p>
+          <h2>Insight Pengeluaran</h2>
+          <p>Pengeluaran operasional tetap menjadi komponen terbesar bulan ini. Biaya gaji guru dan perawatan fasilitas perlu dipantau agar realisasi anggaran tetap sesuai rencana.</p>
         </div>
       </section>
 
-      <section class="income-card" aria-labelledby="income-data-title">
+      <section class="income-card" aria-labelledby="expense-data-title">
         <div class="income-card__header">
           <div>
-            <h2 id="income-data-title">Data Pemasukan</h2>
-            <p>Daftar seluruh transaksi pemasukan yang telah tercatat dalam sistem.</p>
+            <h2 id="expense-data-title">Data Pengeluaran</h2>
+            <p>Daftar seluruh transaksi pengeluaran yang telah tercatat dalam sistem.</p>
           </div>
           <div class="income-summary">
-            <strong>Total Data : 245 | Total Nominal : Rp 2.500.000.000</strong>
-            <span>Terverifikasi : 220 | Menunggu : 25</span>
+            <strong>Total Data : 186 | Total Nominal : Rp 1.250.000.000</strong>
+            <span>Terverifikasi : 164 | Menunggu : 22</span>
           </div>
         </div>
 
@@ -55,7 +56,7 @@
             <span class="search-icon" aria-hidden="true"></span>
             <input type="text" placeholder="Cari transaksi...">
           </div>
-          <button type="button">Filter Sumber Dana <span>⌄</span></button>
+          <button type="button">Filter Kategori <span>⌄</span></button>
           <button type="button">Filter Status <span>⌄</span></button>
           <div class="table-toolbar__spacer"></div>
           <div class="table-toolbar__actions">
@@ -63,7 +64,7 @@
               <span class="import-icon" aria-hidden="true"></span>
               Import Excel
             </button>
-            <button class="add-button" type="button">+ Tambah Pemasukan</button>
+            <button class="add-button" type="button">+ Tambah Pengeluaran</button>
           </div>
         </div>
 
@@ -74,7 +75,7 @@
                 <th>No</th>
                 <th>Tanggal</th>
                 <th>Kode Transaksi</th>
-                <th>Sumber Dana</th>
+                <th>Kategori</th>
                 <th>Unit Sekolah</th>
                 <th>Nominal</th>
                 <th>Metode</th>
@@ -86,10 +87,10 @@
               <tr>
                 <td>1</td>
                 <td>15 Jan 2024</td>
-                <td>INC-2024-001</td>
-                <td>SPP Januari</td>
+                <td>EXP-2024-001</td>
+                <td>Gaji Guru</td>
                 <td>SMA</td>
-                <td>Rp 15.000.000</td>
+                <td>Rp 85.000.000</td>
                 <td>Transfer Bank</td>
                 <td><span class="status-badge status-badge--verified">Terverifikasi</span></td>
                 <td><a href="#">Lihat Detail</a></td>
@@ -97,10 +98,10 @@
               <tr>
                 <td>2</td>
                 <td>12 Jan 2024</td>
-                <td>INC-2024-002</td>
-                <td>Dana BOS Tahap 1</td>
+                <td>EXP-2024-002</td>
+                <td>Operasional</td>
                 <td>SMP</td>
-                <td>Rp 150.000.000</td>
+                <td>Rp 28.500.000</td>
                 <td>Transfer Pusat</td>
                 <td><span class="status-badge status-badge--verified">Terverifikasi</span></td>
                 <td><a href="#">Lihat Detail</a></td>
@@ -108,10 +109,10 @@
               <tr>
                 <td>3</td>
                 <td>10 Jan 2024</td>
-                <td>INC-2024-003</td>
-                <td>Donasi Alumni</td>
+                <td>EXP-2024-003</td>
+                <td>Perawatan Fasilitas</td>
                 <td>Semua Unit</td>
-                <td>Rp 25.000.000</td>
+                <td>Rp 12.000.000</td>
                 <td>Tunai</td>
                 <td><span class="status-badge status-badge--waiting">Menunggu Validasi</span></td>
                 <td><a href="#">Lihat Detail</a></td>
@@ -119,10 +120,10 @@
               <tr>
                 <td>4</td>
                 <td>08 Jan 2024</td>
-                <td>INC-2024-004</td>
-                <td>Sewa Lapangan</td>
+                <td>EXP-2024-004</td>
+                <td>Pengadaan ATK</td>
                 <td>Umum</td>
-                <td>Rp 1.500.000</td>
+                <td>Rp 3.750.000</td>
                 <td>Transfer Bank</td>
                 <td><span class="status-badge status-badge--rejected">Ditolak</span></td>
                 <td><a href="#">Lihat Detail</a></td>
@@ -132,22 +133,20 @@
         </div>
 
         <footer class="table-footer">
-          <span>Menampilkan 1-10 dari 245 data</span>
+          <span>Menampilkan 1-10 dari 186 data</span>
           <nav class="pagination" aria-label="Pagination">
             <a href="#">‹</a>
             <a class="pagination__active" href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <span>...</span>
-            <a href="#">25</a>
+            <a href="#">19</a>
             <a href="#">›</a>
           </nav>
         </footer>
       </section>
-    
     </main>
   </div>
   <script src="../scripts/include-layout.js"></script>
 </body>
 </html>
-
