@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+
+  <body>
+    <main class="login-page" aria-label="Halaman login">
+      <!-- Pattern Decorative -->
+      <div class="pattern-overlay"></div>
+
+      <section class="login-card" aria-labelledby="login-title">
+        <h1 id="login-title">Log In</h1>
+
+        <form class="login-form" action="pages/dashboard.html#" method="get">
+          <div class="form-field">
+            <label for="username">Username</label>
+
+            <div class="input-control">
+              <span class="input-icon input-icon--user" aria-hidden="true"></span>
+
+              <input id="username" name="username" type="text" placeholder="Masukkan username" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="password">Password</label>
+
+            <div class="input-control">
+              <span class="input-icon input-icon--lock" aria-hidden="true"></span>
+
+              <input id="password" name="password" type="password" placeholder="Masukkan password" />
+
+              <span class="input-icon input-icon--eye" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="login-options">
+            <label class="remember-option" for="remember">
+              <input id="remember" name="remember" type="checkbox" />
+
+              <span>Ingat Saya</span>
+            </label>
+
+            <a href="#">Lupa Password?</a>
+          </div>
+
+          <a class="login-button" href="pages/dashboard.html#">
+            <span>Masuk</span>
+
+            <span class="button-arrow" aria-hidden="true"></span>
+          </a>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

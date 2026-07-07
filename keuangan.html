@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemasukan</title>
+    <link rel="stylesheet" href="styles/keuangan.css" />
+  </head>
+  <body>
+    <input class="sidebar-toggle" type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+    <div class="finance-shell">
+      <aside class="finance-sidebar" aria-label="Navigasi utama">
+        <div class="sidebar__brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+          </div>
+          <div class="brand-copy">
+            <strong>Nama Klien</strong>
+            <span>Sistem Keuangan Pendidikan<br />Islam</span>
+          </div>
+        </div>
+
+        <label class="sidebar__toggle-button" for="sidebar-toggle" aria-label="Buka tutup sidebar">
+          <span class="icon-line"></span>
+          <span class="icon-line"></span>
+          <span class="icon-line"></span>
+        </label>
+
+        <nav class="sidebar__nav" aria-label="Menu dashboard">
+          <a class="sidebar__link" href="dashboard.html">
+            <span class="nav-icon nav-icon--grid" aria-hidden="true"></span>
+            <span class="sidebar__label">Dashboard</span>
+          </a>
+          <a class="sidebar__link sidebar__link--active" href="keuangan.html">
+            <span class="nav-icon nav-icon--wallet" aria-hidden="true"></span>
+            <span class="sidebar__label">Keuangan</span>
+            <span class="sidebar__chevron">›</span>
+          </a>
+          <a class="sidebar__link" href="transaksi.html">
+            <span class="nav-icon nav-icon--receipt" aria-hidden="true"></span>
+            <span class="sidebar__label">Transaksi</span>
+          </a>
+          <a class="sidebar__link" href="laporan.html">
+            <span class="nav-icon nav-icon--file" aria-hidden="true"></span>
+            <span class="sidebar__label">Laporan</span>
+            <span class="sidebar__chevron">›</span>
+          </a>
+          <a class="sidebar__link" href="pengajuan.html">
+            <span class="nav-icon nav-icon--check" aria-hidden="true"></span>
+            <span class="sidebar__label">Persetujuan</span>
+            <span class="notification-badge">3</span>
+          </a>
+          <a class="sidebar__link" href="master-data.html">
+            <span class="nav-icon nav-icon--database" aria-hidden="true"></span>
+            <span class="sidebar__label">Master Data</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="nav-icon nav-icon--settings" aria-hidden="true"></span>
+            <span class="sidebar__label">Pengaturan</span>
+          </a>
+        </nav>
+
+        <div class="sidebar__divider"></div>
+
+        <a class="sidebar__logout" href="login.html">
+          <span class="nav-icon nav-icon--logout" aria-hidden="true"></span>
+          <span class="sidebar__label">Logout</span>
+        </a>
+      </aside>
+
+      <main class="finance-content">
+        <header class="layout-header">
+          <div class="layout-header__title">
+            <h1>Dashboard Keuangan</h1>
+            <p>Monitoring Keuangan Pendidikan Islam</p>
+          </div>
+
+          <div class="layout-header__actions">
+            <button class="notification-button" type="button" aria-label="Notifikasi">
+              <span class="notification-dot"></span>
+              <span class="bell-icon" aria-hidden="true"></span>
+            </button>
+            <div class="academic-select" aria-label="Tahun ajaran">
+              <span>Tahun Ajaran</span>
+              <strong>2024/2025 Ganjil</strong>
+              <span class="select-chevron">⌄</span>
+            </div>
+            <div class="user-profile">
+              <div class="user-profile__avatar" aria-hidden="true">FM</div>
+              <div class="user-profile__copy">
+                <strong>Floyd Miles</strong>
+                <span>Administrator</span>
+              </div>
+              <span class="select-chevron">⌄</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="page-intro">
+          <p>Monitoring seluruh sumber pemasukan sekolah secara transparan dan real-time.</p>
+        </section>
+
+        <section class="filter-panel" aria-label="Filter pemasukan">
+          <div class="filter-panel__group">
+            <button type="button">Semua Bulan <span>⌄</span></button>
+            <button type="button">Tahun 2024 <span>⌄</span></button>
+            <button type="button">Semua Unit Sekolah <span>⌄</span></button>
+            <button type="button">Semua Sumber Dana <span>⌄</span></button>
+          </div>
+          <button class="export-button" type="button">
+            <span class="export-icon" aria-hidden="true"></span>
+            Export
+          </button>
+        </section>
+
+        <section class="insight-banner" aria-label="Insight pemasukan">
+          <span class="insight-icon" aria-hidden="true"></span>
+          <div>
+            <h2>Insight Pemasukan</h2>
+            <p>Pendapatan naik 12% dibandingkan periode yang sama tahun lalu. SPP tetap menjadi sumber pemasukan terbesar, namun kontribusi donasi alumni menunjukkan tren peningkatan yang signifikan bulan ini.</p>
+          </div>
+        </section>
+
+        <section class="income-card" aria-labelledby="income-data-title">
+          <div class="income-card__header">
+            <div>
+              <h2 id="income-data-title">Data Pemasukan</h2>
+              <p>Daftar seluruh transaksi pemasukan yang telah tercatat dalam sistem.</p>
+            </div>
+            <div class="income-summary">
+              <strong>Total Data : 245 | Total Nominal : Rp 2.500.000.000</strong>
+              <span>Terverifikasi : 220 | Menunggu : 25</span>
+            </div>
+          </div>
+
+          <div class="table-toolbar">
+            <div class="search-control">
+              <span class="search-icon" aria-hidden="true"></span>
+              <input type="text" placeholder="Cari transaksi..." />
+            </div>
+            <button type="button">Filter Sumber Dana <span>⌄</span></button>
+            <button type="button">Filter Status <span>⌄</span></button>
+            <div class="table-toolbar__spacer"></div>
+            <button class="import-button" type="button">
+              <span class="import-icon" aria-hidden="true"></span>
+              Import Excel
+            </button>
+            <button class="add-button" type="button">+ Tambah Pemasukan</button>
+          </div>
+
+          <div class="income-table-wrap">
+            <table class="income-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Tanggal</th>
+                  <th>Kode Transaksi</th>
+                  <th>Sumber Dana</th>
+                  <th>Unit Sekolah</th>
+                  <th>Nominal</th>
+                  <th>Metode</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>15 Jan 2024</td>
+                  <td>INC-2024-001</td>
+                  <td>SPP Januari</td>
+                  <td>SMA</td>
+                  <td>Rp 15.000.000</td>
+                  <td>Transfer Bank</td>
+                  <td><span class="status-badge status-badge--verified">Terverifikasi</span></td>
+                  <td><a href="#">Lihat Detail</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>12 Jan 2024</td>
+                  <td>INC-2024-002</td>
+                  <td>Dana BOS Tahap 1</td>
+                  <td>SMP</td>
+                  <td>Rp 150.000.000</td>
+                  <td>Transfer Pusat</td>
+                  <td><span class="status-badge status-badge--verified">Terverifikasi</span></td>
+                  <td><a href="#">Lihat Detail</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>10 Jan 2024</td>
+                  <td>INC-2024-003</td>
+                  <td>Donasi Alumni</td>
+                  <td>Semua Unit</td>
+                  <td>Rp 25.000.000</td>
+                  <td>Tunai</td>
+                  <td><span class="status-badge status-badge--waiting">Menunggu Validasi</span></td>
+                  <td><a href="#">Lihat Detail</a></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>08 Jan 2024</td>
+                  <td>INC-2024-004</td>
+                  <td>Sewa Lapangan</td>
+                  <td>Umum</td>
+                  <td>Rp 1.500.000</td>
+                  <td>Transfer Bank</td>
+                  <td><span class="status-badge status-badge--rejected">Ditolak</span></td>
+                  <td><a href="#">Lihat Detail</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="table-footer">
+            <span>Menampilkan 1-10 dari 245 data</span>
+            <nav class="pagination" aria-label="Pagination">
+              <a href="#">‹</a>
+              <a class="pagination__active" href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <span>...</span>
+              <a href="#">25</a>
+              <a href="#">›</a>
+            </nav>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
