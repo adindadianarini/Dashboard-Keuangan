@@ -1,0 +1,672 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --layout-primary: #057a34;
+  --layout-primary-deep: #004b35;
+  --layout-accent: #f3d552;
+  --layout-border-strong: #222817;
+  --layout-sidebar-width: 154px;
+  --layout-sidebar-collapsed: 88px;
+}
+
+/* =======================
+   SHARED SHELL
+======================= */
+
+.app-shell,
+.dashboard,
+.finance-shell,
+.report-shell {
+  display: grid;
+  grid-template-columns: var(--layout-sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+  transition: grid-template-columns 220ms ease;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-toggle:checked + .app-shell,
+.sidebar-toggle:checked + .dashboard,
+.sidebar-toggle:checked + .finance-shell,
+.sidebar-toggle:checked + .report-shell {
+  grid-template-columns: var(--layout-sidebar-collapsed) minmax(0, 1fr);
+}
+
+/* =======================
+   SHARED SIDEBAR
+======================= */
+
+.sidebar,
+.dashboard__sidebar,
+.finance-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 0;
+  padding: 20px 12px;
+  color: #ffffff;
+  background: var(--layout-primary);
+  overflow: hidden;
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  min-height: 48px;
+  margin-bottom: 32px;
+  padding-right: 22px;
+}
+
+.brand-copy {
+  min-width: 0;
+  max-width: 56px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  background: #f6e318;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+.brand-mark::before,
+.brand-mark::after,
+.brand-mark span {
+  position: absolute;
+  content: "";
+  background: var(--layout-primary-deep);
+}
+
+.brand-mark::before {
+  width: 13px;
+  height: 2px;
+  transform: rotate(45deg);
+}
+
+.brand-mark::after {
+  width: 13px;
+  height: 2px;
+  transform: rotate(-45deg);
+}
+
+.brand-mark span {
+  width: 2px;
+  height: 16px;
+}
+
+.brand-copy strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.brand-copy span {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 5px;
+  line-height: 1.12;
+}
+
+.sidebar__toggle-button {
+  position: absolute;
+  top: 34px;
+  right: 8px;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon-line {
+  display: block;
+  width: 9px;
+  height: 1.25px;
+  margin: 1.25px auto;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.sidebar__nav {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar__link,
+.sidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 8px;
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sidebar__link:hover,
+.sidebar__logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar__link--active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #e8cf56;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+}
+
+.sidebar__chevron,
+.notification-badge {
+  margin-left: auto;
+}
+
+.sidebar__chevron {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.86);
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.notification-badge {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  color: #17331f;
+  background: #f5d547;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.sidebar__divider {
+  height: 1px;
+  margin: auto 0 44px;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 98px 0 rgba(255, 255, 255, 0.13);
+}
+
+.sidebar__logout {
+  margin-top: 0;
+  margin-bottom: 92px;
+  padding-bottom: 0;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.nav-icon {
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
+  color: currentColor;
+  opacity: 0.95;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar,
+.sidebar-toggle:checked + .dashboard .sidebar,
+.sidebar-toggle:checked + .finance-shell .sidebar,
+.sidebar-toggle:checked + .report-shell .sidebar {
+  padding: 16px 10px;
+  align-items: center;
+}
+
+.sidebar-toggle:checked + .app-shell .brand-copy,
+.sidebar-toggle:checked + .dashboard .brand-copy,
+.sidebar-toggle:checked + .finance-shell .brand-copy,
+.sidebar-toggle:checked + .report-shell .brand-copy,
+.sidebar-toggle:checked + .app-shell .sidebar__chevron,
+.sidebar-toggle:checked + .dashboard .sidebar__chevron,
+.sidebar-toggle:checked + .finance-shell .sidebar__chevron,
+.sidebar-toggle:checked + .report-shell .sidebar__chevron,
+.sidebar-toggle:checked + .app-shell .sidebar__label,
+.sidebar-toggle:checked + .dashboard .sidebar__label,
+.sidebar-toggle:checked + .finance-shell .sidebar__label,
+.sidebar-toggle:checked + .report-shell .sidebar__label {
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+  width: 0;
+  max-width: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__brand,
+.sidebar-toggle:checked + .dashboard .sidebar__brand,
+.sidebar-toggle:checked + .finance-shell .sidebar__brand,
+.sidebar-toggle:checked + .report-shell .sidebar__brand,
+.sidebar-toggle:checked + .app-shell .sidebar__link,
+.sidebar-toggle:checked + .dashboard .sidebar__link,
+.sidebar-toggle:checked + .finance-shell .sidebar__link,
+.sidebar-toggle:checked + .report-shell .sidebar__link,
+.sidebar-toggle:checked + .app-shell .sidebar__logout,
+.sidebar-toggle:checked + .dashboard .sidebar__logout,
+.sidebar-toggle:checked + .finance-shell .sidebar__logout,
+.sidebar-toggle:checked + .report-shell .sidebar__logout {
+  justify-content: center;
+  padding-inline: 0;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__brand,
+.sidebar-toggle:checked + .dashboard .sidebar__brand,
+.sidebar-toggle:checked + .finance-shell .sidebar__brand,
+.sidebar-toggle:checked + .report-shell .sidebar__brand {
+  gap: 0;
+  width: 100%;
+  padding-right: 0;
+  margin-bottom: 18px;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__nav,
+.sidebar-toggle:checked + .dashboard .sidebar__nav,
+.sidebar-toggle:checked + .finance-shell .sidebar__nav,
+.sidebar-toggle:checked + .report-shell .sidebar__nav {
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__link,
+.sidebar-toggle:checked + .dashboard .sidebar__link,
+.sidebar-toggle:checked + .finance-shell .sidebar__link,
+.sidebar-toggle:checked + .report-shell .sidebar__link {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 0;
+  justify-content: center;
+  font-size: 0;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__link svg,
+.sidebar-toggle:checked + .dashboard .sidebar__link svg,
+.sidebar-toggle:checked + .finance-shell .sidebar__link svg,
+.sidebar-toggle:checked + .report-shell .sidebar__link svg {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__logout,
+.sidebar-toggle:checked + .dashboard .sidebar__logout,
+.sidebar-toggle:checked + .finance-shell .sidebar__logout,
+.sidebar-toggle:checked + .report-shell .sidebar__logout {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  margin-top: auto;
+  margin-bottom: 18px;
+  padding: 0;
+  font-size: 0;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__divider,
+.sidebar-toggle:checked + .dashboard .sidebar__divider,
+.sidebar-toggle:checked + .finance-shell .sidebar__divider,
+.sidebar-toggle:checked + .report-shell .sidebar__divider {
+  display: none;
+}
+
+.sidebar-toggle:checked + .app-shell .notification-badge,
+.sidebar-toggle:checked + .dashboard .notification-badge,
+.sidebar-toggle:checked + .finance-shell .notification-badge,
+.sidebar-toggle:checked + .report-shell .notification-badge {
+  position: absolute;
+  right: 2px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  font-size: 9px;
+  opacity: 1;
+  transform: none;
+  pointer-events: none;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__brand .brand-copy,
+.sidebar-toggle:checked + .dashboard .sidebar__brand .brand-copy,
+.sidebar-toggle:checked + .finance-shell .sidebar__brand .brand-copy,
+.sidebar-toggle:checked + .report-shell .sidebar__brand .brand-copy,
+.sidebar-toggle:checked + .app-shell .sidebar__link .sidebar__label,
+.sidebar-toggle:checked + .dashboard .sidebar__link .sidebar__label,
+.sidebar-toggle:checked + .finance-shell .sidebar__link .sidebar__label,
+.sidebar-toggle:checked + .report-shell .sidebar__link .sidebar__label,
+.sidebar-toggle:checked + .app-shell .sidebar__link .sidebar__chevron,
+.sidebar-toggle:checked + .dashboard .sidebar__link .sidebar__chevron,
+.sidebar-toggle:checked + .finance-shell .sidebar__link .sidebar__chevron,
+.sidebar-toggle:checked + .report-shell .sidebar__link .sidebar__chevron,
+.sidebar-toggle:checked + .app-shell .sidebar__logout .sidebar__label,
+.sidebar-toggle:checked + .dashboard .sidebar__logout .sidebar__label,
+.sidebar-toggle:checked + .finance-shell .sidebar__logout .sidebar__label,
+.sidebar-toggle:checked + .report-shell .sidebar__logout .sidebar__label {
+  display: none !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  opacity: 0 !important;
+  transform: translateX(-8px) !important;
+  pointer-events: none !important;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar,
+.sidebar-toggle:checked + .dashboard .sidebar,
+.sidebar-toggle:checked + .finance-shell .sidebar,
+.sidebar-toggle:checked + .report-shell .sidebar {
+  align-items: center;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__brand,
+.sidebar-toggle:checked + .dashboard .sidebar__brand,
+.sidebar-toggle:checked + .finance-shell .sidebar__brand,
+.sidebar-toggle:checked + .report-shell .sidebar__brand {
+  width: 100%;
+  padding-right: 0;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__nav,
+.sidebar-toggle:checked + .dashboard .sidebar__nav,
+.sidebar-toggle:checked + .finance-shell .sidebar__nav,
+.sidebar-toggle:checked + .report-shell .sidebar__nav {
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__link,
+.sidebar-toggle:checked + .dashboard .sidebar__link,
+.sidebar-toggle:checked + .finance-shell .sidebar__link,
+.sidebar-toggle:checked + .report-shell .sidebar__link,
+.sidebar-toggle:checked + .app-shell .sidebar__logout,
+.sidebar-toggle:checked + .dashboard .sidebar__logout,
+.sidebar-toggle:checked + .finance-shell .sidebar__logout,
+.sidebar-toggle:checked + .report-shell .sidebar__logout {
+  width: 44px;
+  min-height: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+  font-size: 0;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__link svg,
+.sidebar-toggle:checked + .dashboard .sidebar__link svg,
+.sidebar-toggle:checked + .finance-shell .sidebar__link svg,
+.sidebar-toggle:checked + .report-shell .sidebar__link svg {
+  margin: 0;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__logout {
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.sidebar-toggle:checked + .app-shell .sidebar__divider,
+.sidebar-toggle:checked + .dashboard .sidebar__divider,
+.sidebar-toggle:checked + .finance-shell .sidebar__divider,
+.sidebar-toggle:checked + .report-shell .sidebar__divider {
+  display: none;
+}
+
+/* =======================
+   SHARED TOPBAR
+======================= */
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  gap: 16px;
+  padding: 8px 14px;
+  color: #10120d;
+  background: var(--layout-accent);
+  border: 1px solid var(--layout-border-strong);
+  border-radius: 8px;
+}
+
+.layout-header__title h1 {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.layout-header__title p {
+  margin: 0;
+  color: rgba(17, 24, 39, 0.72);
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.layout-header__title span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(17, 24, 39, 0.72);
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.layout-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.notification-button {
+  position: relative;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  background: transparent;
+  border: 0;
+}
+
+.bell-icon {
+  position: relative;
+  width: 15px;
+  height: 16px;
+  border: 2px solid var(--layout-primary-deep);
+  border-bottom-width: 1px;
+  border-radius: 9px 9px 4px 4px;
+}
+
+.bell-icon::after {
+  position: absolute;
+  bottom: -5px;
+  left: 4px;
+  width: 4px;
+  height: 4px;
+  content: "";
+  background: var(--layout-primary-deep);
+  border-radius: 999px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  background: #10b981;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+}
+
+.academic-select {
+  position: relative;
+  min-width: 118px;
+  padding: 5px 26px 5px 8px;
+  border: 1px solid #1d2418;
+  border-radius: 6px;
+}
+
+.academic-select span:first-child {
+  display: block;
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.academic-select strong {
+  display: block;
+  margin-top: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.select-chevron {
+  color: rgba(17, 24, 39, 0.72);
+  font-size: 14px;
+}
+
+.academic-select .select-chevron {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+}
+
+.user-profile__avatar {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: #ffffff;
+  background: var(--layout-primary-deep);
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.user-profile__copy {
+  display: grid;
+  min-width: 0;
+}
+
+.user-profile__copy strong {
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.user-profile__copy span {
+  margin-top: 2px;
+  color: rgba(17, 24, 39, 0.72);
+  font-size: 7px;
+  font-weight: 600;
+}
+
+.layout-footer {
+  display: grid;
+  gap: 1px;
+  margin-top: 14px;
+  padding: 7px 10px;
+  color: #6b746c;
+  background: #f0f1ed;
+  border: 1px solid #e2e5dd;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.layout-footer strong {
+  color: #263128;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.layout-footer span {
+  font-size: 6px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .app-shell,
+  .dashboard,
+  .finance-shell,
+  .report-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar,
+  .dashboard__sidebar,
+  .finance-sidebar {
+    position: relative;
+    height: auto;
+  }
+
+  .sidebar__brand {
+    margin-bottom: 16px;
+  }
+
+  .sidebar__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .sidebar__divider,
+  .sidebar__logout {
+    display: none;
+  }
+
+  .layout-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .layout-header__actions {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
